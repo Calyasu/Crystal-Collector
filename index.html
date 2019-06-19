@@ -16,7 +16,8 @@
         img {
             vertical-align: middle;
             border-style: none;
-            height: 400px;
+            height: 200px;
+
         }
     </style>
 </head>
@@ -35,59 +36,74 @@
         </div>
         <div class="row" style="margin-top: 30px; margin-bottom: 30px;">
             <div class="col-4">
-                <div class="card" style="width: 18rem; ">
+                <div class="card" style="width: 10rem; ">
                     <img src="../Crystal-Collector/assets/images/DarkKnight.jpg" id="drk" alt="dark-knight">
                     <div class="card-body">
-                        <h2 style="background-color: white;
+                        <h6 style="background-color: white;
                             color:black;
                             margin:0 auto;
-                            padding:0;">Dark Knight's Soul Crystal</h2>
+                            padding:0;">Dark Knight's </h6>
+                        <h5 style=color:black>Soul Crystal</h5>
                     </div>
                 </div>
             </div>
             <div class="col-4">
-                <div class="card" style="width: 18rem; margin-bottom: 30px;">
+                <div class="card" style="width: 10rem; margin-bottom: 30px;">
                     <img src="../Crystal-Collector/assets/images/Dragoon.jpg" id="drg" alt="dragoon">
                     <div class="card-body">
-                        <h2 style="background-color:white;
+                        <h5 style="background-color:white;
                                         color:blue;
                                         margin:0 auto;
-                                        padding:0;">Dragoon's </h2>
-                        <h2 style=color:blue>Soul Crystal</h2>
+                                        padding:0;">Dragoon's </h5>
+                        <h5 style=color:blue>Soul Crystal</h5>
                     </div>
                 </div>
             </div>
             <div class="col-4">
-                    <h2 id="aetherflow" style="
+                <h2 style="
                     color:white;
                     margin:0 auto;
-                    padding:0;">Aetherflow </h2>
+                    padding:0;">Aetherflow Limit:</h2>
+                <h3 id="aetherflow" style="color:yellow"></h3>
+                <br>
+                <h2  style = "color:wheat"> Win :</h2>
+                <p id = "win-count" style = "color:wheat; font-size: 24px;"></p>
+
             </div>
         </div>
         <div class="row">
             <div class="col-4">
-                <div class="card" style="width: 18rem; margin-bottom: 30px;">
+                <div class="card" style="width: 10rem; margin-bottom: 30px;">
                     <img src="../Crystal-Collector/assets/images/Ninja.jpg" id="nin" alt="ninja">
                     <div class="card-body">
-                        <h2 style="background-color: white;
+                        <h5 style="background-color: white;
                                     color:red;
                                     margin:0 auto;
-                                    padding:0;">Ninja's </h2>
-                        <h2 style=color:red>Soul Crystal</h2>
+                                    padding:0;">Ninja's </h5>
+                        <h5 style=color:red>Soul Crystal</h5>
                     </div>
                 </div>
             </div>
             <div class="col-4">
-                <div class="card" style="width: 18rem; margin-bottom: 30px;">
+                <div class="card" style="width: 10rem; margin-bottom: 30px;">
                     <img src="../Crystal-Collector/assets/images/Samurai.jpg" id="sam" alt="samurai">
                     <div class="card-body">
-                        <h2 style="background-color: white;
+                        <h5 style="background-color: white;
                                                 color:orange;
                                                 margin:0 auto;
-                                                padding:0;">Samurai's </h2>
-                        <h2 style=color:orange>Soul Crystal</h2>
+                                                padding:0;">Samurai's </h5>
+                        <h5 style=color:orange>Soul Crystal</h5>
                     </div>
                 </div>
+
+            </div>
+            <div class="col-4">
+                <h2 style="
+                    color:white;
+                    margin:0 auto;
+                    padding:0;">Current Aetherflow:</h2>
+                <h3 id="currentAether" style="color:white"></h3>
+
             </div>
         </div>
 
@@ -95,85 +111,9 @@
 
 
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script type="text/javascript">
+    <script type="text/javascript" src="../Crystal-Collector/assets/javascript/javascript.js"></script>
 
-        // Global Variables
-        var drkAether = Math.floor(Math.random() * 12) + 1;
-        var drgAether = Math.floor(Math.random() * 12) + 1;
-        var ninAether = Math.floor(Math.random() * 12) + 1;
-        var samAether = Math.floor(Math.random() * 12) + 1;
-        var goalAether = Math.floor(Math.random() * 120) + 9;
-        var totalAether = 0;
-        var win = 0;
-
-
-
-        $(document).ready(function () {
-
-            $("#drk").on("click", function () {
-                totalAether += drkAether;
-                console.log("Sum of Darkness: " + totalAether);
-                if (totalAether < goalAether) {
-                    return totalAether;
-                } else if (totalAether === goalAether) {
-                    alert("You Win!!!!");
-                    win++;
-                } else {
-                    alert("You Lose!!!");
-                }
-
-            });
-
-            $("#drg").on("click", function () {
-
-                totalAether += drgAether;
-                console.log("Sum of Dragon Blood: " + totalAether);
-                if (totalAether < goalAether) {
-                    return totalAether;
-                } else if (totalAether === goalAether) {
-                    alert("You Win!!!!");
-                    win++;
-                } else {
-                    alert("You Lose!!!");
-                }
-            });
-
-            $("#nin").on("click", function () {
-
-                totalAether += ninAether;
-                console.log("Sum of Ninki: " + totalAether);
-                return totalAether; if (totalAether < goalAether) {
-                    return totalAether;
-                } else if (totalAether === goalAether) {
-                    alert("You Win!!!!");
-                    win++;
-                } else {
-                    alert("You Lose!!!");
-                }
-            });
-
-            $("#sam").on("click", function () {
-
-                totalAether += samAether;
-                console.log("Sum of Kenki: " + totalAether);
-                if (totalAether < goalAether) {
-                    return totalAether;
-                } else if (totalAether === goalAether) {
-                    alert("You Win!!!!");
-                    win++;
-                } else {
-                    alert("You Lose!!!");
-                }
-            });
-
-
-
-        });
-    </script>
-
-
-
-
+        
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
