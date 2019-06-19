@@ -6,6 +6,13 @@ var samAether;
 var goalAether;
 var totalAether;
 var win = 0;
+var loseAlert = ["Who needs a lost count when you're a winner at heart",
+    "Going too far buddy",
+    "Are you even trying",
+    "No lose count so you can feel good about yourself",
+    "All you do is WIN WIN WIN no matter WHAT"]
+var rand ;
+
 
 
 
@@ -23,11 +30,11 @@ $(document).ready(function () {
             win++;
             resetGame();
             $("#currentAether").text(totalAether);
-            
+
         } else {
-            alert("You Lose!!!");
+            alert(rand= loseAlert[Math.floor(Math.random() * loseAlert.length)]);
             $("#currentAether").text(totalAether);
-            
+
             resetGame();
         }
 
@@ -44,12 +51,12 @@ $(document).ready(function () {
             alert("You Win!!!!");
             win++;
             $("#currentAether").text(totalAether);
-            
+
             resetGame();
         } else {
-            alert("You Lose!!!");
+            alert(rand= loseAlert[Math.floor(Math.random() * loseAlert.length)]);
             $("#currentAether").text(totalAether);
-            
+
             resetGame();
         }
     });
@@ -65,12 +72,12 @@ $(document).ready(function () {
             alert("You Win!!!!");
             win++;
             $("#currentAether").text(totalAether);
-            
+
             resetGame();
         } else {
-            alert("You Lose!!!");
+            alert(rand= loseAlert[Math.floor(Math.random() * loseAlert.length)]);
             $("#currentAether").text(totalAether);
-            
+
             resetGame();
         }
     });
@@ -89,7 +96,7 @@ $(document).ready(function () {
             $("#currentAether").text(totalAether);
             resetGame();
         } else {
-            alert("You Lose!!!");
+            alert(rand= loseAlert[Math.floor(Math.random() * loseAlert.length)]);
             resetGame();
         }
     });
@@ -104,7 +111,7 @@ $(document).ready(function () {
         totalAether = 0;
         $("#aetherflow").text(goalAether);
         $("#win-count").text(win);
-        
+
     }
 
 });
